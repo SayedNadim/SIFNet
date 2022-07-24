@@ -5,6 +5,7 @@ Official implementation of  “SIFNet: Free-form image inpainting using color sp
 - Train/Test codes are in "Places" and "Celeb" folders
 - Modify "eval_single.py" as per need and run.
 - Open an issue if you need any help or have any queries.
+- Un-refactored code. But should be able to reproduce the results.
 
 ### Citation
 If you find our paper and code beneficial for your work, please consider citing us!
