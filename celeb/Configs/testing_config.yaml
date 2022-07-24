@@ -1,0 +1,75 @@
+# data parameters
+expname: sifnet
+model_type: fusion # refinement
+dataset_name: celeba
+
+random_sample: False
+with_subfolder: False
+
+# resume/fine-tune model
+resume: True #True
+checkpoint_dir: checkpoint
+checkpoint: /home/la-belva/code_ground/INPAINTING/SIFNet/celeb/checkpoint/celeb_checkpoint.pth
+save_results_path: output
+save_test_images: True
+
+# hyper-parameters
+batch_size: 4
+input_size: [ 256, 256 ]
+patch_size: [ 256, 256 ]
+dense_layer: 4
+growth_rate: 4
+threads: 4
+optimizer: Adam
+g_lr: 0.0002
+d_feature_lr: 0.00001
+d_pixel_lr: 0.00001
+beta1: 0.5
+beta2: 0.9
+seed: 2021
+gan_critic: 1
+
+# Loss parameters
+l1_weight: 1.0
+gan_weight: 0.1
+hole_loss_weight: 1.0
+valid_loss_weight: 1.0
+perceptual_loss_weight: 1.0
+tv_loss_weight: 1.0
+reduce_lr: False
+reduce_lr_epoch: 100
+gan_type: relativistic_hinge
+
+# network parameters
+netG:
+  net_l:
+    input_dim: 1
+    cnum: 32
+    output_dim: 1
+  net_ab:
+    input_dim: 2
+    cnum: 32
+    output_dim: 2
+  net_fusion:
+    input_dim: 4
+    cnum: 32
+    output_dim: 3
+
+netD:
+  pixel:
+    input_dim: 3
+    ndf: 64
+    use_sigmoid: False
+  feature:
+    input_dim: 3
+    ndf: 64
+    n_layers: 4
+    use_sigmoid: False
+
+
+# gpu parameters
+gpu_mode: True
+cuda: True
+gpus: 1
+gpu_ids: [ 0 ]  # set the GPU ids to use, e.g. [0] or [1, 2]
+cudnn_benchmark: True
