@@ -1,4 +1,4 @@
-# SIFNet
+# SIFNet: Free-form image inpainting using color split-inpaint-fuse approach
 Official implementation of  “SIFNet: Free-form image inpainting using color split-inpaint-fuse approach” published in the Computer Vision and Image Understanding Journal (Volume 221, August 2022, 103446). Link to the [paper](https://www.sciencedirect.com/science/article/pii/S1077314222000613). 
 
 ### How to run
